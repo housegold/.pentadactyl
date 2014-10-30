@@ -90,8 +90,8 @@ end
 "" jumping at hint mode, see http://code.google.com/p/dactyl/issues/detail?id=158
 "map -modes hints j     -ex normal! 10j
 "map -modes hints k     -ex normal! 10k
-map -modes hints <C-f> -ex normal! <C-f>
-map -modes hints <C-b> -ex normal! <C-b>
+" map -modes hints <C-f> -ex normal! <C-f>
+" map -modes hints <C-b> -ex normal! <C-b>
 "map -modes hints gg    -ex normal! gg
 "map -modes hints G     -ex normal! G
 
@@ -533,12 +533,12 @@ let selectors = ["a[onmousedown]", "a[target='_blank']", "a[target='_self']", "a
 hints.addMode("g", "Follow specfic hint", function (elem) buffer.followLink(elem), null, selectors);
 hints.addMode("G", "Follow specfic hint in a background tab", function (elem) buffer.followLink(elem, dactyl.NEW_BACKGROUND_TAB), null, selectors);
 EOF
-group -locations www.google.com,groups.google.com,duckduckgo.com customHint
-nmap -builtin f ;G
-nmap -builtin F g;G
-group -locations groups.google.com customHintGoogleGroups
-nmap -builtin f ;g
-group user
+"group -locations www.google.com,groups.google.com,duckduckgo.com customHint
+"nmap -builtin f ;G
+"nmap -builtin F g;G
+"group -locations groups.google.com customHintGoogleGroups
+"nmap -builtin f ;g
+"group user
 
 " google docs viewer {{{2
 js <<EOF
