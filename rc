@@ -520,8 +520,8 @@ overlay.overlayObject(dactyl, {
         open.superapply(this, arguments);
     }
 });
-completion.addUrlCompleter("buffer", "Open Tabs", completion.buffer);
-options["complete"].splice(0, 0, "buffer");
+" completion.addUrlCompleter("buffer", "Open Tabs", completion.buffer);
+" options["complete"].splice(0, 0, "buffer");
 EOF
 
 " custom hint {{{2
