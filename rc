@@ -1,36 +1,36 @@
 " Mapping {{{1 
 "" scroll more
-nmap -builtin j 10j
-nmap -builtin k 10k
+"nmap -builtin j 10j
+"nmap -builtin k 10k
 
 "" swap d/D
-nmap -builtin d D
-nmap -builtin D d
-nmap -builtin gd :js config.tabbrowser.removeTab(tabs.getTab())<CR>
+"nmap -builtin d D
+"nmap -builtin D d
+"nmap -builtin gd :js config.tabbrowser.removeTab(tabs.getTab())<CR>
 
 "" swap y/Y
 "nmap -builtin y Y
 "nmap -builtin Y y
 
 "" swap p/P
-nmap -builtin p P
-nmap -builtin P p
+"nmap -builtin p P
+"nmap -builtin P p
 
 "" J/K move left/right
 "nmap -builtin J h
 "nmap -builtin K l
 
 "" w/e switch tabs
-nmap -builtin w <C-p>
-nmap -builtin e <C-n>
+"nmap -builtin w <C-p>
+"nmap -builtin e <C-n>
 
 "" back/forward
-nmap -builtin h <C-o>
-nmap -builtin l <C-i>
+"nmap -builtin h <C-o>
+"nmap -builtin l <C-i>
 
 "" left/right
-nmap -builtin <C-o> 10<Right>
-nmap -builtin <C-i> 10<Left>
+"nmap -builtin <C-o> 10<Right>
+"nmap -builtin <C-i> 10<Left>
 
 "" prev selected tab
 nmap -builtin x <C-^>
@@ -108,7 +108,7 @@ command -nargs=? -complete=search switchSearch execute 'open <args> ' + (buffer.
 map S gi<ESC> :switchSearch<Space>
 command -nargs=* siteSearch execute "tabopen <args> site:" + window.content.location.hostname
 
-set defsearch=g
+"set defsearch=g
 
 " Option {{{1
 "" ]]/[[ turn next/previous page
@@ -143,7 +143,7 @@ EOF
 "set hlfind
 
 "" complete search engine suguest
-set complete=location,suggestion
+"set complete=location,suggestion
 
 "" allow popups popup
 "set popups=tab,resized
@@ -159,8 +159,8 @@ set complete=location,suggestion
 set strictfocus^=tao123.com:despotic
 
 "" disable smooth scroll
-set scrollsteps=1
-set scrolltime=0
+"set scrollsteps=1
+"set scrolltime=0
 
 set maxitems=10
 
