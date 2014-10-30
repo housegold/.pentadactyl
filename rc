@@ -90,8 +90,8 @@ end
 "" jumping at hint mode, see http://code.google.com/p/dactyl/issues/detail?id=158
 "map -modes hints j     -ex normal! 10j
 "map -modes hints k     -ex normal! 10k
-" map -modes hints <C-f> -ex normal! <C-f>
-" map -modes hints <C-b> -ex normal! <C-b>
+ map -modes hints <C-f> -ex normal! <C-f>
+ map -modes hints <C-b> -ex normal! <C-b>
 "map -modes hints gg    -ex normal! gg
 "map -modes hints G     -ex normal! G
 
@@ -461,11 +461,12 @@ if (doc.title.match(/subscription/i)) {
 EOF
 
 " Style {{{1
-hi StatusLineNormal color: white; background: #3f3f3f;
-hi StatusLineSecure color: white; background-color: #3f3f3f; background-image: linear-gradient(to right, #6ca0a3, #3f3f3f 60px);
-hi StatusLineExtended color: white; background-color: #3f3f3f; background-image: linear-gradient(to right, #7f9f7f, #3f3f3f 60px);
-hi StatusLineBroken color: white; background-color: #3f3f3f; background-image: linear-gradient(to right, #cc9393, #3f3f3f 60px);
+"hi StatusLineNormal color: white; background: #3f3f3f;
+"hi StatusLineSecure color: white; background-color: #3f3f3f; background-image: linear-gradient(to right, #6ca0a3, #3f3f3f 60px);
+"hi StatusLineExtended color: white; background-color: #3f3f3f; background-image: linear-gradient(to right, #7f9f7f, #3f3f3f 60px);
+"hi StatusLineBroken color: white; background-color: #3f3f3f; background-image: linear-gradient(to right, #cc9393, #3f3f3f 60px);
 "" from https://github.com/remiprev/pentadactyl-files/blob/master/colors/feline.penta
+"fang
 hi Hint line-height: 6px; text-shadow: 1px 1px 1px #000; padding: 5px 6px 6px; font-size: 13px; font-weight: normal; color: white; background-color: rgba(0, 0, 0, 0.6); border-radius: 1em; box-shadow: 0 0 4px rgba(0,0,0,1); text-transform: uppercase;
 hi Hint[active] background: rgba(0, 0, 0, 0.8);
 hi Hint[ambiguous] background: rgba(0, 0, 255, 0.6);
@@ -528,17 +529,18 @@ options["complete"].splice(0, 0, "buffer");
 EOF
 
 " custom hint {{{2
+" fang
 js <<EOF
 let selectors = ["a[onmousedown]", "a[target='_blank']", "a[target='_self']", "a[href^='#!topic/']", "div.links_main"];
 hints.addMode("g", "Follow specfic hint", function (elem) buffer.followLink(elem), null, selectors);
 hints.addMode("G", "Follow specfic hint in a background tab", function (elem) buffer.followLink(elem, dactyl.NEW_BACKGROUND_TAB), null, selectors);
 EOF
-"group -locations www.google.com,groups.google.com,duckduckgo.com customHint
-"nmap -builtin f ;G
-"nmap -builtin F g;G
-"group -locations groups.google.com customHintGoogleGroups
-"nmap -builtin f ;g
-"group user
+group -locations www.google.com,groups.google.com,duckduckgo.com customHint
+nmap -builtin f ;G
+nmap -builtin F g;G
+group -locations groups.google.com customHintGoogleGroups
+nmap -builtin f ;g
+group user
 
 " google docs viewer {{{2
 js <<EOF
