@@ -98,6 +98,14 @@ end
 "" focus on main frame
 nmap -builtin gw ;F1<CR>
 
+
+""  fang
+nmap -builtin ,, :history!<Space>
+nmap -builtin ,< :history<Space>
+nmap -builtin ,m :bmarks! -tags=
+nmap -builtin ,M :bmarks -tags=
+
+
 " Searching {{{1
 "" from http://www.slimeden.com/2011/03/firefox/pentadactyl
 ":map t -js content.getSelection().toString()!=""?dactyl.execute(":tabopen "+ content.getSelection()):CommandExMode().open("tabopen ")
@@ -466,6 +474,22 @@ EOF
 "hi StatusLineExtended color: white; background-color: #3f3f3f; background-image: linear-gradient(to right, #7f9f7f, #3f3f3f 60px);
 "hi StatusLineBroken color: white; background-color: #3f3f3f; background-image: linear-gradient(to right, #cc9393, #3f3f3f 60px);
 "" from https://github.com/remiprev/pentadactyl-files/blob/master/colors/feline.penta
+
+"hi StatusLineNormal font-size:22px;
+"hi StatusLineSecure font-size:22px;
+"hi StatusLineExtended font-size:22px;
+"hi StatusLineBroken font-size:22px;
+hi -a StatusLineNormal font-size: 200%;
+hi -a StatusLineSecure font-size: 200%;
+hi -a StatusLineExtended font-size: 200%;
+hi -a StatusLineBroken font-size: 200%;
+
+" from https://github.com/remiprev/pentadactyl-files/blob/master/colors/feline.penta
+" hi StatusLine background: WindowFrame; font-size: 100%; font-family: Helvetica; color: black; padding: 0px 3px 4px;
+" hi StatusLineNormal background: WindowFrame; font-size: 100%; font-family: Helvetica; color: black; padding: 0px 3px 4px;
+" hi StatusLineBroken color: Black; background-color: #faa;
+" hi StatusLineSecure color: Black; background-color: #afa;
+
 "fang
 hi Hint line-height: 6px; text-shadow: 1px 1px 1px #000; padding: 5px 6px 6px; font-size: 13px; font-weight: normal; color: white; background-color: rgba(0, 0, 0, 0.6); border-radius: 1em; box-shadow: 0 0 4px rgba(0,0,0,1); text-transform: uppercase;
 hi Hint[active] background: rgba(0, 0, 0, 0.8);
@@ -536,10 +560,10 @@ hints.addMode("g", "Follow specfic hint", function (elem) buffer.followLink(elem
 hints.addMode("G", "Follow specfic hint in a background tab", function (elem) buffer.followLink(elem, dactyl.NEW_BACKGROUND_TAB), null, selectors);
 EOF
 group -locations www.google.com,groups.google.com,duckduckgo.com customHint
-nmap -builtin f ;G
+"nmap -builtin f ;G
 nmap -builtin F g;G
 group -locations groups.google.com customHintGoogleGroups
-nmap -builtin f ;g
+"nmap -builtin f ;g
 group user
 
 " google docs viewer {{{2
